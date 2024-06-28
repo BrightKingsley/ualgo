@@ -64,7 +64,7 @@ export default function Footer() {
                       </NavLink>
                     </li>
                     <li className="footer-list-item">
-                      <NavLink className="footer-link" href="pricing">
+                      <NavLink className="footer-link" href="/#pricing">
                         {({ isActive }) => (
                           <p
                             className={clsx(

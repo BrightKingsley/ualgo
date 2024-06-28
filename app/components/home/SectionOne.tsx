@@ -175,11 +175,11 @@ export default function SectionOne() {
               <motion.p
                 ref={paragraphRef}
                 data-w-id="221002a3-673f-e3ef-09b7-3bcc2d29398f"
-                className="paragraph home-hero text-center mx-auto"
+                className="paragraph mt-12 home-hero text-center mx-auto"
                 variants={itemVariants}
                 animate={{
                   opacity: paragraphInView ? 1 : 0,
-                  y: paragraphInView ? 0 : 50,
+                  y: paragraphInView ? 0 : 400,
                 }}
                 transition={{ duration: 1, delay: 0.5 }}>
                 Say goodbye to ambiguous indicators and vague signals{" "}
