@@ -51,18 +51,7 @@ export default function SectionFour() {
                   />
                 </div>
                 <div className="paragraph-medium specs">
-                  Pinpoint high-de
-                  <motion.div
-                    ref={splitContentRef}
-                    data-w-id="5a853f01-9e50-3c92-e576-c36e34aa5bd6"
-                    initial={{ opacity: 0, scale: 0.6 }}
-                    animate={{
-                      opacity: splitContentInView ? 1 : 0,
-                      scale: splitContentInView ? 1 : 0.6,
-                    }}
-                    transition={{ duration: 1 }}
-                    className="split-content specs-1"></motion.div>
-                  mand zones analysis
+                  Pinpoint high-demand zones analysis
                 </div>
               </div>
               <div className="spec-wrapper">

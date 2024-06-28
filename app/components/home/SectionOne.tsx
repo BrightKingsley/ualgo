@@ -199,7 +199,7 @@ export default function SectionOne() {
                   className="button-primary w-button text-center">
                   Get Started risk free
                 </Link>
-                <div className="space _2-buttons"></div>
+                {/* <div className="space_ _2-buttons_"></div> */}
               </motion.div>
             </motion.div>
           </div>

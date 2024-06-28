@@ -2,6 +2,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 import React, { useState } from "react";
+import AnimateInOut from "./AnimateInOut";
 
 export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
@@ -202,7 +203,12 @@ export default function Header() {
 
         {/* NOTE */}
 
-        <div
+        <AnimateInOut
+          show={showMenu}
+          initial={{ translateX: "100%" }}
+          animate={{ translateX: "0%" }}
+          exit={{ translateX: "100%" }}
+          transition={{ duration: 0.6, type: "spring" }}
           className="w-nav-overlay"
           data-wf-ignore=""
           id="w-nav-overlay-0"
@@ -218,11 +224,11 @@ export default function Header() {
               // showMenu && "data-nav-menu-open",
             )}
             style={{
-              transform: `translateX(${
-                showMenu ? "0px" : "100%"
-              }) translateY(0px)`,
+              // transform: `translateX(${
+              //   showMenu ? "0px" : "100%"
+              // }) translateY(0px)`,
               height: "2862.01px",
-              transition: "transform 600ms cubic-bezier(0.19, 1, 0.22, 1) 0s",
+              // transition: "transform 600ms cubic-bezier(0.19, 1, 0.22, 1) 0s",
             }}>
             <ul
               role="list"
@@ -261,7 +267,7 @@ export default function Header() {
               </li>
             </ul>
           </nav>
-        </div>
+        </AnimateInOut>
       </div>
     </>
   );
