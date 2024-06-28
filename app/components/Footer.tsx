@@ -120,6 +120,7 @@ export default function Footer() {
                     required={true}
                   />
                   <input
+                    disabled
                     type="submit"
                     data-wait="Please wait..."
                     className="button-primary newsletter w-button"
