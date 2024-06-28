@@ -1,14 +1,54 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import Accordion from "./Accordion";
 
 export default function FAQs() {
+  const headingRef = useRef(null);
+  const faqRef = useRef(null);
+
+  const headingInView = useInView(headingRef, { once: true });
+  const faqInView = useInView(faqRef, { once: true });
+
+  const { scrollYProgress } = useScroll({
+    target: faqRef,
+    offset: ["start end", "end start"],
+  });
+
+  const translateY = useTransform(scrollYProgress, [0, 1], ["30%", "-20%"]);
+  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 1]);
+
   return (
     <div className="section faqs">
-      <div className="container-small-549px faqs">
+      <motion.div
+        ref={headingRef}
+        animate={{
+          translateY: headingInView ? 0 : 200,
+        }}
+        // style={{
+        //   willChange: "transform",
+        //   translateY,
+        //   opacity,
+        //   scale,
+        // }}
+        transition={{ duration: 0.6, type: "keyframes" }}
+        className="container-small-549px faqs">
         <h2 data-w-id="6c6c445c-0816-3e3c-aab5-9abd470b72c8">FAQs</h2>
-      </div>
+      </motion.div>
       <div className="container-medium-920px">
-        <div
+        <motion.div
+          ref={faqRef}
+          animate={{
+            translateY: faqInView ? 0 : 200,
+          }}
+          // style={{
+          //   willChange: "transform",
+          //   translateY,
+          //   opacity,
+          //   scale,
+          // }}
+          transition={{ delay: 0.5, duration: 0.6, type: "keyframes" }}
           data-w-id="6c6c445c-0816-3e3c-aab5-9abd470b72cd"
           className="w-layout-grid faqs-grid">
           <Accordion
@@ -31,7 +71,7 @@ export default function FAQs() {
             heading="What timeframes does it work on?"
             content="Ualgo Backtester works across all assets and timeframes. In general however, we suggest using this on timeframes over the 5m to avoid frictional costs and overtrading. It does work below however if you are newer to trading these are best to avoid."
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

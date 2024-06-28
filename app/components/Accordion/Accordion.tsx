@@ -17,7 +17,7 @@ export default function Accordion({
         <div className="faq-wrapper faq-spacing">
           <Disclosure.Button className="w-full h-full">
             <div className="faq-top-content w-full">
-              <h3 className="title faq">{heading}</h3>
+              <h3 className="title faq !text-left">{heading}</h3>
               <div
                 className={clsx(
                   "faq-icon-wrapper transition-all duration-200",
@@ -36,7 +36,7 @@ export default function Accordion({
               transition={{ type: "keyframes" }}
               className="faq-content overflow-clip">
               <div className="space faq"></div>
-              <p className="paragraph faq text-left">{content}</p>
+              <p className="paragraph faq !text-left">{content}</p>
             </AnimateInOut>
           </Disclosure.Button>
         </div>
