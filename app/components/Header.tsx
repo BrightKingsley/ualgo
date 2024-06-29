@@ -10,8 +10,8 @@ export default function Header() {
     <>
       <AnimateInOut
         show={true}
-        initial={{ translateY: 50, opacity: 0 }}
-        animate={{ translateY: 0, opacity: 1 }}
+        initial={{ scale: 0.98, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.7, type: "keyframes" }}
         data-collapse="medium"
         data-animation="over-right"
@@ -133,8 +133,8 @@ export default function Header() {
 
       <AnimateInOut
         show={true}
-        initial={{ translateY: 50, opacity: 0 }}
-        animate={{ translateY: 0, opacity: 1 }}
+        initial={{ scale: 0.98, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.7, type: "keyframes" }}
         data-collapse="medium"
         data-animation="over-right"
@@ -231,13 +231,14 @@ export default function Header() {
               "nav-menu w-nav-menu data-nav-menu-open",
               // showMenu && "data-nav-menu-open",
             )}
-            style={{
-              // transform: `translateX(${
-              //   showMenu ? "0px" : "100%"
-              // }) translateY(0px)`,
-              height: "2862.01px",
-              // transition: "transform 600ms cubic-bezier(0.19, 1, 0.22, 1) 0s",
-            }}>
+            style={
+              {
+                // transform: `translateX(${
+                //   showMenu ? "0px" : "100%"
+                // }) scale:1,              height: "2862.01px",
+                // transition: "transform 600ms cubic-bezier(0.19, 1, 0.22, 1) 0s",
+              }
+            }>
             <ul
               role="list"
               className="header-navigation"

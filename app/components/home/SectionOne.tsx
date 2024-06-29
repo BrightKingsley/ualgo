@@ -117,7 +117,7 @@ export default function SectionOne() {
     offset: ["end end", "start start"],
   });
 
-  const rawTranslateY = useTransform(scrollYProgress, [0, 1], [0, 50]);
+  const rawTranslateY = useTransform(scrollYProgress, [0, 1], [0, 0]);
   const translateY = useSpring(rawTranslateY, { stiffness: 100, damping: 20 });
   // const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
@@ -147,6 +147,11 @@ export default function SectionOne() {
     show: { opacity: 1, y: 0 },
   };
 
+  const imgVariants = {
+    hidden: { opacity: 1, y: 50 },
+    show: { opacity: 1, y: 0 },
+  };
+
   return (
     <div
       data-w-id="221002a3-673f-e3ef-09b7-3bcc2d293989"
@@ -163,7 +168,7 @@ export default function SectionOne() {
                 data-w-id="221002a3-673f-e3ef-09b7-3bcc2d29398d"
                 className="title home-hero"
                 variants={itemVariants}
-                transition={{ duration: 1, type: "spring" }}>
+                transition={{ delay: 0.8, duration: 1, type: "spring" }}>
                 Proven Strategies Proven Results
               </motion.h1>
               <motion.img
@@ -175,8 +180,8 @@ export default function SectionOne() {
                   willChange: "transform",
                   translateY,
                 }}
-                variants={itemVariants}
-                transition={{ duration: 1 }}
+                variants={imgVariants}
+                transition={{ duration: 1.4 }}
               />
               <motion.p
                 ref={paragraphRef}
