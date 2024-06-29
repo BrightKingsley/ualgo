@@ -13,9 +13,9 @@ export default function Accordion({
 }) {
   return (
     <Disclosure>
-      {({ open }) => (
+      {({ open, close }) => (
         <div className="faq-wrapper faq-spacing">
-          <Disclosure.Button className="w-full h-full">
+          <Disclosure.Button className="w-full">
             <div className="faq-top-content w-full">
               <h3 className="title faq !text-left">{heading}</h3>
               <div
@@ -27,18 +27,19 @@ export default function Accordion({
                 <div className="faq-icon-line-2"></div>
               </div>
             </div>
-
-            <AnimateInOut
-              show={open}
-              initial={{ height: 0 }}
-              animate={{ height: "auto" }}
-              exit={{ height: 0 }}
-              transition={{ type: "keyframes" }}
-              className="faq-content overflow-clip">
-              <div className="space faq"></div>
-              <p className="paragraph faq !text-left">{content}</p>
-            </AnimateInOut>
           </Disclosure.Button>
+
+          <AnimateInOut
+            onClick={() => close()}
+            show={open}
+            initial={{ height: 0 }}
+            animate={{ height: "auto" }}
+            exit={{ height: 0 }}
+            transition={{ type: "keyframes" }}
+            className="faq-content overflow-clip">
+            <div className="space faq"></div>
+            <p className="paragraph faq !text-left">{content}</p>
+          </AnimateInOut>
         </div>
       )}
     </Disclosure>
