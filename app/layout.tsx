@@ -28,7 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} bg-neutral-1000`}>{children}</body>
+      <body className={`${poppins.className}`}>
+        <main className="page-wrapper overflow-hidden">{children}</main>
+      </body>
     </html>
   );
 }

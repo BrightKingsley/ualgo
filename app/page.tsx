@@ -11,19 +11,22 @@ import Header from "./components/Header";
 
 export default function Home() {
   return (
-    <div className="page-wrapper overflow-hidden">
-      <div className="bg-neutral-1000">
-        <Header />
-        <SectionOne />
-        <SectionTwo />
-        <SectionThree />
-        <SectionFour />
-        <SectionFive />
-        <Pricing />
-        <FAQs />
-        <Flyer />
-        <Footer />
-      </div>
-    </div>
+    // <div className="page-wrapper overflow-hidden">
+    // {/* <div className="bg-neutral-1000_"> */}
+
+    <>
+      <Header />
+      <SectionOne />
+      <SectionTwo />
+      <SectionThree />
+      <SectionFour />
+      <SectionFive />
+      <Pricing />
+      <FAQs />
+      <Flyer />
+      <Footer />
+    </>
+    // {/* </div> */}
+    // </div>
   );
 }

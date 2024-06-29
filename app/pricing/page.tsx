@@ -9,14 +9,12 @@ import Header from "../components/Header";
 
 export default function PricingPage() {
   return (
-    <main className="bg-neutral-1000">
-      <div className="page-wrapper overflow-hidden">
-        <Header />
-        <Pricing />
-        <FAQs />
-        <Flyer />
-        <Footer />
-      </div>
-    </main>
+    <>
+      <Header />
+      <Pricing />
+      <FAQs />
+      <Flyer />
+      <Footer />
+    </>
   );
 }
