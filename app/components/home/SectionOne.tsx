@@ -123,23 +123,29 @@ export default function SectionOne() {
 
   const paragraphRef = useRef(null);
   const linkRef = useRef(null);
-  const paragraphInView = useInView(paragraphRef, { once: true });
-  const linkInView = useInView(linkRef, { once: true });
+  const paragraphInView = useInView(paragraphRef, {
+    once: true,
+    amount: "all",
+  });
+  const linkInView = useInView(linkRef, {
+    once: true,
+    amount: "all",
+  });
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
+  // const containerVariants = {
+  //   hidden: { opacity: 0 },
+  //   show: {
+  //     opacity: 1,
+  //     transition: {
+  //       staggerChildren: 0.3,
+  //     },
+  //   },
+  // };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    show: { opacity: 1, y: 0 },
-  };
+  // const itemVariants = {
+  //   hidden: { opacity: 0, y: 50 },
+  //   show: { opacity: 1, y: 0 },
+  // };
 
   return (
     <div
@@ -149,14 +155,14 @@ export default function SectionOne() {
         <div className="home-hero-wrapper">
           <div className="home-hero-content">
             <motion.div
-              variants={containerVariants}
+              // variants={containerVariants}
               initial="hidden"
               animate="show"
               className="home-hero-animations">
               <motion.h1
                 data-w-id="221002a3-673f-e3ef-09b7-3bcc2d29398d"
                 className="title home-hero"
-                variants={itemVariants}
+                // variants={itemVariants}
                 transition={{ duration: 1 }}>
                 Proven Strategies Proven Results{" "}
               </motion.h1>
@@ -169,17 +175,17 @@ export default function SectionOne() {
                   willChange: "transform",
                   translateY,
                 }}
-                variants={itemVariants}
+                // variants={itemVariants}
                 transition={{ duration: 1 }}
               />
               <motion.p
                 ref={paragraphRef}
                 data-w-id="221002a3-673f-e3ef-09b7-3bcc2d29398f"
                 className="paragraph mt-12 home-hero text-center mx-auto"
-                variants={itemVariants}
+                // variants={itemVariants}
                 animate={{
                   opacity: paragraphInView ? 1 : 0,
-                  y: paragraphInView ? 0 : 400,
+                  y: paragraphInView ? 0 : 100,
                 }}
                 transition={{ duration: 1, delay: 0.5 }}>
                 Say goodbye to ambiguous indicators and vague signals{" "}
@@ -187,10 +193,10 @@ export default function SectionOne() {
               <motion.div
                 ref={linkRef}
                 className="_2-buttons-wrapper"
-                variants={itemVariants}
+                // variants={itemVariants}
                 animate={{
                   opacity: linkInView ? 1 : 0,
-                  y: linkInView ? 0 : 50,
+                  y: linkInView ? 0 : 100,
                 }}
                 transition={{ duration: 1, delay: 1 }}>
                 <Link
