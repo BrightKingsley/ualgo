@@ -8,7 +8,11 @@ export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <>
-      <div
+      <AnimateInOut
+        show={true}
+        initial={{ translateY: 50, opacity: 0 }}
+        animate={{ translateY: 0, opacity: 1 }}
+        transition={{ duration: 0.7, type: "keyframes" }}
         data-collapse="medium"
         data-animation="over-right"
         data-duration="600"
@@ -125,9 +129,13 @@ export default function Header() {
             </button>
           </div>
         </div>
-      </div>
+      </AnimateInOut>
 
-      <div
+      <AnimateInOut
+        show={true}
+        initial={{ translateY: 50, opacity: 0 }}
+        animate={{ translateY: 0, opacity: 1 }}
+        transition={{ duration: 0.7, type: "keyframes" }}
         data-collapse="medium"
         data-animation="over-right"
         data-duration="600"
@@ -268,7 +276,7 @@ export default function Header() {
             </ul>
           </nav>
         </AnimateInOut>
-      </div>
+      </AnimateInOut>
     </>
   );
 }
