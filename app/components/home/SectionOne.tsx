@@ -125,27 +125,27 @@ export default function SectionOne() {
   const linkRef = useRef(null);
   const paragraphInView = useInView(paragraphRef, {
     once: true,
-    amount: "all",
+    amount: "some",
   });
   const linkInView = useInView(linkRef, {
     once: true,
-    amount: "all",
+    amount: "some",
   });
 
-  // const containerVariants = {
-  //   hidden: { opacity: 0 },
-  //   show: {
-  //     opacity: 1,
-  //     transition: {
-  //       staggerChildren: 0.3,
-  //     },
-  //   },
-  // };
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
 
-  // const itemVariants = {
-  //   hidden: { opacity: 0, y: 50 },
-  //   show: { opacity: 1, y: 0 },
-  // };
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    show: { opacity: 1, y: 0 },
+  };
 
   return (
     <div
@@ -155,16 +155,16 @@ export default function SectionOne() {
         <div className="home-hero-wrapper">
           <div className="home-hero-content">
             <motion.div
-              // variants={containerVariants}
+              variants={containerVariants}
               initial="hidden"
               animate="show"
               className="home-hero-animations">
               <motion.h1
                 data-w-id="221002a3-673f-e3ef-09b7-3bcc2d29398d"
                 className="title home-hero"
-                // variants={itemVariants}
-                transition={{ duration: 1 }}>
-                Proven Strategies Proven Results{" "}
+                variants={itemVariants}
+                transition={{ duration: 1, type: "spring" }}>
+                Proven Strategies Proven Results
               </motion.h1>
               <motion.img
                 src="images/65db4384123a8a171af8c4a7_stratify_home_01_09.png"
@@ -175,7 +175,7 @@ export default function SectionOne() {
                   willChange: "transform",
                   translateY,
                 }}
-                // variants={itemVariants}
+                variants={itemVariants}
                 transition={{ duration: 1 }}
               />
               <motion.p

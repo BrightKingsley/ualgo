@@ -310,7 +310,7 @@ export default function SectionTwo() {
   return (
     <div
       data-w-id="5a853f01-9e50-3c92-e576-c36e34aa5bd3"
-      className="section specs-2">
+      className="section specs-2 bg-neutral-1000">
       <div className="container-default w-container">
         <div className="specs-2-wrapper">
           <motion.div
